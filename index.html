@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4A388E" />
+  <title>UBA DOCES</title>
+  <meta name="description" content="UBA DOCES — pedidos, revenda, eventos e novidades." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --roxo:#4A388E;
+      --lavanda:#CDC6E4;
+      --uva:#5C5CA6;
+      --creme:#FEF2E4;
+      --indigo:#13132A;
+      --branco:#FFFDF9;
+      --shadow:0 18px 50px rgba(19,19,42,.14);
+      --radius:30px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Montserrat",system-ui,sans-serif;
+      background:var(--creme);
+      color:var(--indigo);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    .shell{width:min(100% - 28px, 560px);margin:auto}
+    .hero{
+      min-height:100svh;
+      padding:28px 0 46px;
+      color:var(--creme);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(205,198,228,.27), transparent 27%),
+        radial-gradient(circle at 12% 68%, rgba(92,92,166,.55), transparent 26%),
+        var(--roxo);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;left:-5%;right:-5%;bottom:-1px;height:48px;
+      background:var(--creme);
+      clip-path:polygon(0 55%,8% 35%,17% 55%,26% 38%,36% 60%,45% 40%,55% 58%,65% 36%,75% 58%,85% 40%,94% 58%,100% 43%,100% 100%,0 100%);
+    }
+    .logo-wrap{
+      width:154px;height:154px;border-radius:38px;overflow:hidden;
+      margin:6px auto 22px;box-shadow:0 18px 45px rgba(0,0,0,.18);
+      border:1px solid rgba(254,242,228,.25);
+    }
+    .logo-wrap img{width:100%;height:100%;object-fit:cover}
+    .eyebrow{
+      text-align:center;text-transform:uppercase;font-size:.72rem;
+      letter-spacing:.16em;font-weight:800;opacity:.82;
+    }
+    h1{
+      margin:10px auto 14px;text-align:center;
+      font-size:clamp(2.25rem,10vw,4rem);line-height:.96;letter-spacing:-.055em;
+      max-width:12ch;
+    }
+    .hero p{
+      text-align:center;line-height:1.6;margin:0 auto 24px;max-width:35ch;
+      color:rgba(254,242,228,.9)
+    }
+    .hero-note{
+      display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0 26px
+    }
+    .pill{
+      border:1px solid rgba(254,242,228,.25);
+      background:rgba(254,242,228,.1);
+      backdrop-filter: blur(8px);
+      padding:9px 13px;border-radius:999px;font-size:.78rem;font-weight:700;
+    }
+    .primary{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;padding:17px 18px;border-radius:20px;
+      background:var(--creme);color:var(--roxo);font-weight:800;
+      box-shadow:0 14px 28px rgba(19,19,42,.18);
+      transition:.2s transform ease,.2s box-shadow ease;
+    }
+    .primary:active,.card-link:active{transform:scale(.985)}
+    .section{padding:56px 0}
+    .section h2{
+      font-size:2rem;letter-spacing:-.045em;line-height:1.05;margin:0 0 12px
+    }
+    .section-intro{line-height:1.65;color:#3a3950;margin:0 0 26px}
+    .serif{font-family:"Lora",serif;font-style:italic;font-weight:600}
+    .actions{display:grid;gap:14px}
+    .card-link{
+      display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;
+      background:#fff;border:1px solid rgba(74,56,142,.12);
+      border-radius:24px;padding:16px;box-shadow:0 10px 24px rgba(19,19,42,.07);
+      transition:.2s transform ease;
+    }
+    .icon{
+      width:54px;height:54px;border-radius:17px;display:grid;place-items:center;
+      background:var(--lavanda);color:var(--roxo);font-size:1.5rem
+    }
+    .card-link strong{display:block;font-size:1rem;margin-bottom:3px}
+    .card-link small{color:#636178;line-height:1.35}
+    .arrow{font-size:1.35rem;color:var(--roxo)}
+    .visual{
+      margin-top:44px;border-radius:var(--radius);overflow:hidden;
+      box-shadow:var(--shadow);background:var(--lavanda)
+    }
+    .visual img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .purple{background:var(--roxo);color:var(--creme);position:relative}
+    .purple .section-intro{color:rgba(254,242,228,.82)}
+    .product-row{
+      display:grid;grid-auto-flow:column;grid-auto-columns:78%;
+      gap:14px;overflow-x:auto;padding:2px 0 10px;scroll-snap-type:x mandatory;
+      scrollbar-width:none;
+    }
+    .product-row::-webkit-scrollbar{display:none}
+    .product-card{
+      scroll-snap-align:start;background:var(--creme);color:var(--indigo);
+      border-radius:28px;overflow:hidden;box-shadow:0 14px 38px rgba(19,19,42,.18)
+    }
+    .product-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .product-card div{padding:16px 17px 18px}
+    .product-card b{display:block;margin-bottom:5px}
+    .product-card span{font-size:.82rem;color:#68657a}
+    .trust{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px
+    }
+    .trust div{
+      border:1px solid rgba(254,242,228,.2);border-radius:20px;padding:16px;
+      background:rgba(254,242,228,.08)
+    }
+    .trust b{font-size:1.12rem}
+    .trust span{display:block;margin-top:4px;font-size:.77rem;opacity:.78}
+    .reviews{display:grid;gap:12px;margin-top:24px}
+    .review{
+      padding:20px;border-radius:24px;background:#fff;
+      border:1px solid rgba(74,56,142,.12);box-shadow:0 8px 20px rgba(19,19,42,.06)
+    }
+    .review-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .review .name{font-weight:800}
+    .stars{color:var(--roxo);letter-spacing:.06em}
+    .review p{margin:12px 0 0;line-height:1.55;color:#44425a}
+    .demo{
+      margin-top:12px;padding:12px 14px;border-radius:16px;
+      background:var(--lavanda);color:#33296a;font-size:.74rem;line-height:1.45
+    }
+    .youtube{
+      background:var(--indigo);color:var(--creme);border-radius:32px;padding:28px;
+      position:relative;overflow:hidden
+    }
+    .youtube:after{
+      content:"♥";position:absolute;right:-5px;bottom:-32px;font-size:9rem;
+      color:rgba(205,198,228,.12);transform:rotate(-8deg)
+    }
+    .youtube p{color:rgba(254,242,228,.78);line-height:1.6}
+    .youtube a{
+      display:inline-flex;margin-top:8px;padding:13px 16px;border-radius:16px;
+      background:var(--creme);color:var(--indigo);font-weight:800
+    }
+    footer{
+      padding:38px 0 46px;text-align:center;color:#666277;font-size:.78rem
+    }
+    .mini-logo{width:74px;height:74px;border-radius:21px;overflow:hidden;margin:0 auto 14px}
+    .mini-logo img{width:100%;height:100%;object-fit:cover}
+    @media(min-width:700px){
+      .shell{width:min(100% - 40px,620px)}
+      .product-row{grid-auto-columns:60%}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <div class="logo-wrap"><img src="assets/logo.jpg" alt="Logo UBA DOCES"></div>
+        <div class="eyebrow">Doceria artesanal • Limoeiro do Norte</div>
+        <h1>Seu momento <span class="serif">UBA</span> começa aqui.</h1>
+        <p>Alfajores artesanais, pedidos rápidos e soluções para quem quer revender ou adoçar um evento.</p>
+
+        <div class="hero-note">
+          <span class="pill">feito com cuidado</span>
+          <span class="pill">recheio cremoso</span>
+          <span class="pill">marca local</span>
+        </div>
+
+        <a class="primary" href="#pedir">Escolher como pedir <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="pedir">
+      <div class="shell">
+        <div class="eyebrow" style="text-align:left;color:var(--roxo)">Pedidos e parcerias</div>
+        <h2>Como você quer falar com a UBA?</h2>
+        <p class="section-intro">Deixamos cada canal com uma função clara, para você chegar mais rápido ao que precisa.</p>
+
+        <div class="actions">
+          <a class="card-link" href="https://www.ifood.com.br/delivery/limoeiro-do-norte-ce/uba-doces-limoeiro/f8ef93f4-acc3-4a1b-b436-b71314feadbd">
+            <div class="icon">🍫</div>
+            <div><strong>Comprar pelo iFood</strong><small>Para pedir agora e receber seus alfajores.</small></div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card-link" href="https://wa.me/message/E5CLDBR2RHOFM1">
+            <div class="icon">🏪</div>
+            <div><strong>Quero revender UBA</strong><small>Condições para comércio, pontos de venda e revendedores.</small></div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card-link" href="https://wa.me/message/E5CLDBR2RHOFM1">
+            <div class="icon">🎉</div>
+            <div><strong>Encomenda para eventos</strong><small>Festas, empresas, aniversários e pedidos em quantidade.</small></div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+
+        <div class="visual"><img src="assets/equipe.jpg" alt="Equipe UBA DOCES"></div>
+      </div>
+    </section>
+
+    <section class="section purple">
+      <div class="shell">
+        <div class="eyebrow" style="text-align:left">Textura real, desejo imediato</div>
+        <h2>Difícil é escolher só um.</h2>
+        <p class="section-intro">Uma vitrine rápida para mostrar a cara dos sabores antes do cliente ir para o pedido.</p>
+
+        <div class="product-row">
+          <article class="product-card">
+            <img src="assets/alfajor-chocolate.jpg" alt="Alfajor de chocolate">
+            <div><b>Chocolate</b><span>Intenso, cremoso e com cara de quero mais.</span></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/alfajor-branco.jpg" alt="Alfajor branco">
+            <div><b>Chocolate branco</b><span>Doce, delicado e muito cremoso.</span></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/alfajor-pistache.jpg" alt="Alfajor de pistache">
+            <div><b>Pistache</b><span>Marcante, moderno e cheio de personalidade.</span></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/alfajor-morango.jpg" alt="Alfajor de morango">
+            <div><b>Morango</b><span>Bonito por fora e cremoso por dentro.</span></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/alfajor-caramelo.jpg" alt="Alfajor de caramelo">
+            <div><b>Caramelo</b><span>Conforto em forma de doce.</span></div>
+          </article>
+        </div>
+
+        <div class="trust">
+          <div><b>Artesanal</b><span>feito com presença e cuidado</span></div>
+          <div><b>UBA</b><span>uma marca feita para ser lembrada</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="eyebrow" style="text-align:left;color:var(--roxo)">Prova social</div>
+        <h2>O tipo de recado que queremos colecionar.</h2>
+        <p class="section-intro">O visual abaixo já está pronto para avaliações. Na publicação final, o ideal é trocar estes textos por feedbacks reais de clientes.</p>
+
+        <div class="reviews">
+          <article class="review">
+            <div class="review-top"><span class="name">Cliente UBA</span><span class="stars">★★★★★</span></div>
+            <p>“Chegou bonito, bem embalado e o recheio estava super cremoso.”</p>
+          </article>
+          <article class="review">
+            <div class="review-top"><span class="name">Parceiro revendedor</span><span class="stars">★★★★★</span></div>
+            <p>“Produto chama atenção no balcão e é fácil de oferecer para quem já conhece a marca.”</p>
+          </article>
+          <article class="review">
+            <div class="review-top"><span class="name">Pedido para evento</span><span class="stars">★★★★★</span></div>
+            <p>“Ficou lindo na mesa e o pessoal perguntou onde comprava.”</p>
+          </article>
+        </div>
+        <div class="demo"><strong>Importante:</strong> estes textos são demonstrativos. Para não enganar o cliente, publique como depoimentos somente avaliações reais/autorizadas.</div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:12px">
+      <div class="shell">
+        <div class="youtube">
+          <div class="eyebrow" style="text-align:left">Conteúdo UBA</div>
+          <h2 style="margin-top:10px">YouTube, quando der vontade de mostrar mais.</h2>
+          <p>Bastidores, produção, novidades e histórias da marca podem morar aqui no futuro sem roubar o foco dos pedidos.</p>
+          <a href="https://www.youtube.com/@ubadoces">Ver canal →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="mini-logo"><img src="assets/logo.jpg" alt=""></div>
+      <b>UBA DOCES</b><br>
+      <span>Afeto, apetite e personalidade.</span>
+    </div>
+  </footer>
+</body>
+</html>
