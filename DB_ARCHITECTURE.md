@@ -1,5 +1,7 @@
 # Banco exclusivo — UBA Link Perfil
 
+A integração Neon existente cria `LINK_PROFILE_DATABASE_DATABASE_URL`, também aceita pelo servidor. Não há fallback para `DATABASE_URL` ou `POSTGRES_URL`. Se as duas variáveis exclusivas estiverem presentes com valores diferentes, o servidor recusa a conexão. Não copie credenciais do Controles.
+
 O UBA Link Perfil usa um banco Neon/PostgreSQL próprio. Ele não compartilha tabelas nem credenciais com UBA Controles ou UBA Revendedores.
 
 ## Responsabilidade deste banco
