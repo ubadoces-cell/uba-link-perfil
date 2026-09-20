@@ -227,19 +227,19 @@
         <p class="section-intro">Deixamos cada canal com uma função clara, para você chegar mais rápido ao que precisa.</p>
 
         <div class="actions">
-          <a class="card-link" href="https://www.ifood.com.br/delivery/limoeiro-do-norte-ce/uba-doces-limoeiro/f8ef93f4-acc3-4a1b-b436-b71314feadbd">
+          <a class="card-link" data-link="ifood" href="https://www.ifood.com.br/delivery/limoeiro-do-norte-ce/uba-doces-limoeiro/f8ef93f4-acc3-4a1b-b436-b71314feadbd">
             <div class="icon">🍫</div>
             <div><strong>Comprar pelo iFood</strong><small>Para pedir agora e receber seus alfajores.</small></div>
             <div class="arrow">→</div>
           </a>
 
-          <a class="card-link" href="https://wa.me/message/E5CLDBR2RHOFM1">
+          <a class="card-link" data-link="whatsapp" href="https://wa.me/message/E5CLDBR2RHOFM1">
             <div class="icon">🏪</div>
             <div><strong>Quero revender UBA</strong><small>Condições para comércio, pontos de venda e revendedores.</small></div>
             <div class="arrow">→</div>
           </a>
 
-          <a class="card-link" href="https://wa.me/message/E5CLDBR2RHOFM1">
+          <a class="card-link" data-link="whatsapp" href="https://wa.me/message/E5CLDBR2RHOFM1">
             <div class="icon">🎉</div>
             <div><strong>Encomenda para eventos</strong><small>Festas, empresas, aniversários e pedidos em quantidade.</small></div>
             <div class="arrow">→</div>
@@ -316,7 +316,7 @@
           <div class="eyebrow" style="text-align:left">Conteúdo UBA</div>
           <h2 style="margin-top:10px">YouTube, quando der vontade de mostrar mais.</h2>
           <p>Bastidores, produção, novidades e histórias da marca podem morar aqui no futuro sem roubar o foco dos pedidos.</p>
-          <a href="https://www.youtube.com/@ubadoces">Ver canal →</a>
+          <a data-link="youtube" href="https://www.youtube.com/@ubadoces">Ver canal →</a>
         </div>
       </div>
     </section>
@@ -331,14 +331,34 @@
   </footer>
 
   <script>
-    (() => {
+    (async () => {
       const card = document.querySelector('[data-sales-highlight]');
       const number = document.querySelector('[data-sales-count]');
       if (!card || !number) return;
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (reducedMotion.matches) return;
-      const target = 29637;
+      let target = 29637;
+      try {
+        const response = await fetch('/api/content', { headers: { Accept: 'application/json' } });
+        if (response.ok) {
+          const data = await response.json();
+          const content = data && data.content ? data.content : {};
+          if (Number.isFinite(Number(content.salesCount))) target = Math.max(0, Math.trunc(Number(content.salesCount)));
+          for (const [name, url] of Object.entries(content.links || {})) {
+            document.querySelectorAll(`[data-link="${name}"]`).forEach((link) => {
+              if (typeof url === 'string' && /^https?:\/\//i.test(url)) link.href = url;
+            });
+          }
+        }
+      } catch {
+        // O conteúdo estático continua funcionando se a API estiver temporariamente indisponível.
+      }
       const format = new Intl.NumberFormat('pt-BR');
+      const accessible = card.querySelector('.visually-hidden');
+      if (accessible) accessible.textContent = `Mais de ${format.format(target)} alfajores vendidos este ano.`;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reducedMotion.matches) {
+        number.textContent = format.format(target);
+        return;
+      }
       let started = false;
       const animate = () => {
         if (started) return;
