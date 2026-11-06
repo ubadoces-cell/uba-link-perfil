@@ -35,3 +35,9 @@
 - **Alteração:** substituído somente o emoji 🎉 pela logo oficial já presente em `assets/logo.jpg`, com fundo branco na moldura.
 - **Preservado:** textos e links dos três botões, estilo geral, imagens, layout, efeitos, API e conteúdo.
 - **Backup anterior:** `backup/2026-11-05-antes-icone-eventos-branco` no commit `5376b33e13d142fe217ada75173c91c8f7749b3e`.
+
+## 06/11/2026 — Cardápio completo com 10 sabores
+- **Backup do site:** `backup/2026-11-06-antes-cardapio-completo` no commit `e5900a71740ae291f3a2290f9087033fe5857143`.
+- **Alteração:** as fotos de 10 sabores estão no próprio projeto em `assets/cardapio/`. Valores à vista e cartão exibidos com tipografia discreta no fundo roxo, abaixo das fotos.
+- **Estoque:** 7 disponíveis, 3 temporariamente indisponíveis.
+- **Preservados:** identidade visual, fontes, links, recursos do site, banco, hero, integrações e demais seções.
