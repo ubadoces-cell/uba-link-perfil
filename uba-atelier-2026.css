@@ -18,7 +18,7 @@ body{
     radial-gradient(ellipse 60% 30% at 10% 4%,rgba(112,79,189,.12),transparent 72%),
     linear-gradient(145deg,#eee9f7,#e6def2);
   color:#261936;
-  padding-bottom:105px;
+  padding-bottom:0;
 }
 .shell{width:min(100% - 32px,640px)}
 .hero{
@@ -219,48 +219,6 @@ footer{color:#5a4b68;padding:38px 0 60px}
 footer b{color:#382454}
 .mini-logo{border:1px solid #bdaed1}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #b79aea;outline-offset:3px}
-/* Navegação de perfil: terceira área Liquid Glass, não substitui os canais comerciais. */
-.uba-profile-glass{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  align-items:center;
-  gap:4px;
-  position:fixed;z-index:40;
-  left:50%;transform:translateX(-50%);
-  bottom:calc(11px + env(safe-area-inset-bottom,0px));
-  width:min(440px,calc(100vw - 28px));
-  min-height:67px;
-  padding:6px;
-  border:1px solid rgba(211,197,240,.72);
-  border-radius:25px;
-  background:linear-gradient(135deg,rgba(65,41,112,.94),rgba(34,20,68,.97));
-  backdrop-filter:blur(22px) saturate(145%);
-  -webkit-backdrop-filter:blur(22px) saturate(145%);
-  box-shadow:0 15px 43px rgba(13,5,32,.38),inset 0 1px 0 rgba(247,240,255,.29);
-}
-.uba-profile-glass a{
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  min-width:0;min-height:53px;
-  gap:4px;
-  border-radius:19px;
-  color:#eee6ff;
-  font-size:.75rem;
-  font-weight:800;
-  transition:background .28s,color .28s,transform .28s var(--uba-ease);
-}
-.uba-profile-glass a svg{
-  width:20px;height:20px;fill:none;
-  stroke:currentColor;stroke-width:1.8;
-  stroke-linecap:round;stroke-linejoin:round;
-}
-.uba-profile-glass a.active,
-.uba-profile-glass a[aria-current="location"]{
-  background:linear-gradient(145deg,rgba(27,14,59,.99),rgba(16,10,38,.96));
-  color:#fff;
-  box-shadow:inset 0 1px 0 rgba(213,198,247,.17),0 5px 16px rgba(7,3,23,.28);
-}
-.uba-profile-glass a:hover{background:rgba(202,180,245,.14);color:#fff}
-.uba-profile-glass a:active{transform:scale(.97)}
 /* Efeitos de entrada somente se suportados; sem esconder conteúdo na ausência de JS. */
 html.uba-motion-ready .uba-reveal:not(.uba-reveal-visible){opacity:0;transform:translate3d(0,18px,0)}
 .uba-reveal{transition:opacity .72s var(--uba-ease),transform .75s var(--uba-ease)}
@@ -283,13 +241,10 @@ html.uba-motion-ready .uba-reveal:not(.uba-reveal-visible){opacity:0;transform:t
   .card-link strong{font-size:.95rem}
   .card-link small{font-size:.82rem}
   .product-row{grid-auto-columns:84%}
-  .uba-profile-glass{width:calc(100vw - 20px);min-height:62px}
-  .uba-profile-glass a{min-height:49px;font-size:.72rem}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto!important}
   .logo-wrap,.primary,.card-link,.product-card,.visual img,.youtube a,
-  .uba-profile-glass a,.uba-reveal{transition:none!important;transform:none!important;animation:none!important}
+  .uba-reveal{transition:none!important;transform:none!important;animation:none!important}
   html.uba-motion-ready .uba-reveal:not(.uba-reveal-visible){opacity:1!important;transform:none!important}
 }
-@media print{.uba-profile-glass{display:none!important}}
