@@ -16,3 +16,9 @@
 - **Backup GitHub:** `backup/2026-11-05-antes-retirar-liquid-link-perfil`.
 - **Alterações:** remoção do elemento de navegação, de seus estilos e de seus eventos, preservando animações da página e canais de compra.
 - **Para restaurar:** recuperar somente os arquivos visuais deste backup; não substituir dados ou alterações posteriores.
+
+## 05/11/2026 — Direcionamento de revenda e encomendas
+- **Alteração:** os botões "Quero revender UBA" e "Encomenda para eventos" do Link de Perfil passam a abrir `https://uba-revendedores.vercel.app`.
+- **Atenção:** removido `data-link="whatsapp"` desses dois botões para a API de conteúdo não substituir os destinos por WhatsApp.
+- **Backup anterior:** branch `backup/2026-11-05-antes-links-revendedores`, commit `9d254a399d14008a3f062b61c2f4e2b93641e4f4`.
+- **Preservado:** botão iFood, design, fotos, efeitos e links de outras áreas.
