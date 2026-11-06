@@ -162,6 +162,17 @@ h1{
   height:88%;
   border-radius:9px;
 }
+/* Festas e eventos: mesmo arquivo original da UBA, em moldura branca. */
+.card-link .icon.brand-icon-events{
+  background:#ffffff;
+  border-color:#d9cbea;
+  padding:5px;
+}
+.card-link .icon.brand-icon-events img{
+  width:88%;
+  height:88%;
+  border-radius:9px;
+}
 .card-link strong{font-size:1.01rem;line-height:1.3}
 .card-link small{display:block;margin-top:5px;font-size:.84rem;line-height:1.5;color:#554461}
 .arrow{color:#4A388E;font-weight:900;transition:transform .35s var(--uba-ease)}
