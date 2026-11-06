@@ -22,3 +22,11 @@
 - **Atenção:** removido `data-link="whatsapp"` desses dois botões para a API de conteúdo não substituir os destinos por WhatsApp.
 - **Backup anterior:** branch `backup/2026-11-05-antes-links-revendedores`, commit `9d254a399d14008a3f062b61c2f4e2b93641e4f4`.
 - **Preservado:** botão iFood, design, fotos, efeitos e links de outras áreas.
+
+## 05/11/2026 — Ícones originais nas opções de compra e revenda
+- **Solicitação:** substituir apenas emojis pelos logotipos originais, sem redesenhar marcas ou alterar os demais botões.
+- **Comprar pelo iFood:** imagem fornecida pelo usuário, redimensionada exclusivamente para exibição pequena e incorporada a um arquivo SVG como imagem (não foi redesenhada).
+- **Quero revender UBA:** reaproveitado o próprio arquivo original `assets/logo.jpg` do projeto, com moldura de lavanda fria para diferenciar.
+- **Encomendas para eventos:** permanece com o mesmo emoji e destino anterior.
+- **Backup anterior:** branch `backup/2026-11-05-antes-icones-originais` no commit `50c301bc1cf24f08f17b6c73844c29d633e5f66a`.
+- **Reversão:** recuperar somente os arquivos visuais originais desse backup, sem alterar API, vendas, registros nem mudanças posteriores.
