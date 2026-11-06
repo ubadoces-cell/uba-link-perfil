@@ -30,3 +30,8 @@
 - **Encomendas para eventos:** permanece com o mesmo emoji e destino anterior.
 - **Backup anterior:** branch `backup/2026-11-05-antes-icones-originais` no commit `50c301bc1cf24f08f17b6c73844c29d633e5f66a`.
 - **Reversão:** recuperar somente os arquivos visuais originais desse backup, sem alterar API, vendas, registros nem mudanças posteriores.
+
+## 05/11/2026 — Logo UBA no botão Festas e eventos
+- **Alteração:** substituído somente o emoji 🎉 pela logo oficial já presente em `assets/logo.jpg`, com fundo branco na moldura.
+- **Preservado:** textos e links dos três botões, estilo geral, imagens, layout, efeitos, API e conteúdo.
+- **Backup anterior:** `backup/2026-11-05-antes-icone-eventos-branco` no commit `5376b33e13d142fe217ada75173c91c8f7749b3e`.
