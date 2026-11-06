@@ -286,3 +286,30 @@ html.uba-motion-ready .uba-reveal:not(.uba-reveal-visible){opacity:0;transform:t
   .uba-reveal{transition:none!important;transform:none!important;animation:none!important}
   html.uba-motion-ready .uba-reveal:not(.uba-reveal-visible){opacity:1!important;transform:none!important}
 }
+
+/* Cardápio UBA | 06/11/2026: fotos locais e preço discreto no fundo roxo */
+.uba-menu-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 13px;color:#e3d6f6;font-size:.73rem;font-weight:600;line-height:1.5}
+.uba-menu-summary b{color:#f7f1ff}.uba-menu-summary span:last-child{white-space:nowrap;font-size:.68rem;color:#d4c4ec}
+.uba-menu-row{scroll-padding-inline:3px}
+.product-card.uba-menu-card{min-width:0;background:#26173f;color:#f9f4ff}
+.product-card.uba-menu-card .uba-card-photo{position:relative;overflow:hidden;aspect-ratio:1/1;padding:0;background:#4a388e}
+.uba-menu-card .uba-card-photo img{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease}
+.uba-menu-card .uba-flavor-status{position:absolute;left:12px;top:12px;background:rgba(36,21,54,.88);border:1px solid rgba(226,213,255,.7);border-radius:8px;padding:6px 8px;color:#f3ebff;font-size:.59rem;letter-spacing:.055em;font-weight:800}
+.uba-menu-card.is-unavailable .uba-card-photo img{filter:saturate(.78)}
+.product-card.uba-menu-card .uba-card-info{padding:16px 17px 18px}
+.product-card.uba-menu-card .uba-card-heading{display:flex;align-items:flex-start;gap:10px;padding:0}
+.product-card.uba-menu-card .uba-card-heading>div{padding:0}
+.uba-menu-index{flex-shrink:0;padding:5px 6px;border:1px solid rgba(205,198,228,.38);border-radius:7px;color:#dacbed;font-size:.67rem;line-height:1;font-weight:800}
+.uba-menu-card .uba-card-heading b{font-size:1rem;line-height:1.3;margin:0}
+.uba-menu-card .uba-filling{display:block;margin-top:4px;color:#ddcfee;font-size:.76rem;font-weight:600;line-height:1.35}
+.uba-menu-card .uba-description{min-height:37px;color:#d9cde9;font-size:.78rem;line-height:1.55;margin:10px 0 0}
+.product-card.uba-menu-card .uba-price-panel{display:flex;align-items:center;justify-content:space-around;gap:5px;margin-top:12px;padding:10px 8px;border:1px solid rgba(205,198,228,.27);border-radius:11px;background:rgba(205,198,228,.075);box-shadow:none}
+.product-card.uba-menu-card .uba-price{flex:1;min-width:0;padding:0;text-align:center}
+.uba-menu-card .uba-price span{display:block;color:#d5c4e9;font-size:.59rem;letter-spacing:.08em;font-weight:700}
+.uba-menu-card .uba-price strong{display:block;color:#fff;font-size:clamp(.79rem,2.9vw,.9rem);line-height:1.5;letter-spacing:-.015em;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.uba-menu-card .uba-price-separator{width:1px;height:23px;background:rgba(205,198,228,.30)}
+.uba-menu-card .uba-out-of-stock{display:block;margin-top:10px;color:#d3c1e8;font-size:.7rem;font-weight:600}
+.uba-menu-note{margin:0 0 16px;color:#d9caeb;font-size:.7rem;line-height:1.6}
+@media(hover:hover){.product-card.uba-menu-card:hover .uba-card-photo img{transform:scale(1.035)}}
+@media(max-width:480px){.uba-menu-summary{font-size:.67rem}.uba-menu-summary span:last-child{font-size:.62rem}.uba-menu-card .uba-price strong{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.uba-menu-card .uba-card-photo img{transition:none!important}}
